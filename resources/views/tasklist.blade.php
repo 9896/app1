@@ -9,12 +9,13 @@
 
     <div class="flex flex-col items-center mt-4 h-screen">
 
+        <!-- Create task page button -->
         <a href="{{ route('dashboard') }}"
             class="mb-4 shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
             Create Task</a>
 
         @if(count($tasks) > 1)
-
+        <!-- Task list table -->
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

@@ -6,11 +6,12 @@
 
     <div class="flex flex-col items-center justify-center h-screen">
 
+        <!-- Task list page button -->
         <a href="{{ route('tasklist') }}"
             class="mb-4 shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"> View Task
             list</a>
 
-
+        <!-- Add task form -->
         <form action="/add-task" method="post" class="w-full max-w-sm bg-white shadow-md rounded px-8 pt-6 pb-8">
             @csrf
             @if ($errors->any())

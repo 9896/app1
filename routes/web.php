@@ -25,14 +25,8 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::get('/task-list', [TaskController::class, 'get'])->name('tasklist');
-    // function() {
-    //     return view('tasklist');
-    // })->name('tasklist');
 
     Route::post('/add-task', [TaskController::class, 'add']);
-    // Route::post('/add-task', function() {
-    //     return "hello";
-    // });
 
 });
 

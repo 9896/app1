@@ -25,7 +25,7 @@ class SaveTaskJob extends Job
     /**
      * Execute the job.
      *
-     * @return Task
+     * @return View
      */
     public function handle()
     {

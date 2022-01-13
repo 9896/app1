@@ -25,14 +25,12 @@ class GetTasksJob extends Job
     /**
      * Execute the job.
      *
-     * @return void
+     * @return View
      */
     public function handle()
     {
         $tasks = Auth::user()->tasks;
-        //return $tasks;
         return view('tasklist')->with('tasks', $tasks);
-        //return Auth::user()->tasks;
-        //return $tasks;
+
     }
 }
