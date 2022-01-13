@@ -30,14 +30,14 @@ class SaveTaskJob extends Job
     public function handle()
     {
         $id = Auth::user()->id;
-        
+
         $attributes = [
             'title' => $this->title,
             'description' => $this->description,
             'user_id' => $id,
         ];
 
-        $task = Task::create($attributes);
-        return $task;
+        Task::create($attributes);
+        return redirect()->route('tasklist');
     }
 }

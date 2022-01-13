@@ -13,6 +13,8 @@
             class="mb-4 shadow bg-teal-500 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
             Create Task</a>
 
+        @if(count($tasks) > 1)
+
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -35,28 +37,29 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
+                                @foreach ($tasks as $task)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
                                             <div class="ml-4">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    Jane Cooper
+                                                    {{ $task->title }}
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">Regional Paradigm Technician</div>
+                                        <div class="text-sm text-gray-900">{{ $task->description}}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span
                                             class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                            Active
+                                            {{ $task->created_at }}
                                         </span>
                                     </td>
 
                                 </tr>
-
+                                @endforeach
                                 <!-- More people... -->
                             </tbody>
                         </table>
@@ -64,8 +67,9 @@
                 </div>
             </div>
         </div>
-
-
+        @else
+        <p class="text-gray-400">Oops! it seems you dont have any task. Click the create task button to create a new task</p>
+        @endif
     </div>
 
 </x-app-layout>

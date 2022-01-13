@@ -11,7 +11,7 @@ class AddTaskFeature extends Feature
 {
     public function handle(AddTask $request)
     {
-        $this->run(SaveTaskJob::class, [
+        return $this->run(SaveTaskJob::class, [
             'title' => $request->title,
             'description' => $request->description,
         ]);
